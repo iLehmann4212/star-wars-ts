@@ -11,6 +11,7 @@ interface CharacterInfo {
     skin_color: string;
     eye_color: string;
 }
+type keys = keyof CharacterInfo;
 
 const AboutMe = () => {
     const [hero, setHero] = useState<CharacterInfo | null>(null);
@@ -43,9 +44,10 @@ const AboutMe = () => {
 
     return (
         <>
+
             {(!!hero) &&
                 <div className={'text-[2em] text-justify tracking-widest leading-14 ml-8'}>
-                    {Object.keys(hero:<CharacterInfo>[]).map(key => <p key={key}>
+                    {(Object.keys(hero) as keys []).map(key => <p key={key}>
                         <span className={'text-3xl capitalize'}>{key.replace('_', ' ')}</span>: {hero[key]}
                     </p>)}
                 </div>
