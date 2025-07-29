@@ -6,6 +6,7 @@ import {useParams} from "react-router";
 const AboutMe = () => {
     const [hero, setHero] = useState<HeroInfo>();
     const {heroId} = useParams();
+    console.log(heroId);
 
     useEffect(() => {
         const hero = JSON.parse(localStorage.getItem("hero")!);

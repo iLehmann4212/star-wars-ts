@@ -39,7 +39,7 @@ const Contact = () => {
             <label className={`w-full text-red-color`}>Planet
                 <select className={`border w-full text-black p-3 border-[#ccc] rounded-[4px] mt-1.5 mb-4 resize-y`}
                         name="planet">{
-                    planets.map(item => <option value={item} key={item}>{item}</option>)
+                    planets?.map(item => <option value={item} key={item}>{item}</option>)
                 }
                 </select>
             </label>
